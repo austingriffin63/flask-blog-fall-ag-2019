@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Add styles for showing posts on post-detail-->
+<div class ="heynow">
+<h1>The author of this post is: {{ post.author.username }}</h1>
+
+<h3>Content</h3>
+</div>
+<div class="heynow">
+<hr> <br>
+</div>
+<div class="heynow">
+<h3>Title: {{post.title}}</h3>
+<p>{{post.content}}</p>
+<blockquote>Data Created: {{post.date_created}}</blockquote>
+</div>
+{% endblock content %}

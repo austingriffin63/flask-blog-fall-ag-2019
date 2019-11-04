@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Here lies home HTML content-->
+<header class = "banner">
+        <h1 class = "header-text">Welcome to a world of a...</h1>
+
+</header>
+
+<!-- Add styles for showing posts on home-->
+
+
+
+{% if current_user.is_authenticated %}
+
+    {% for post in posts %}
+<div class="pOSTS">
+    
+    <h2><a href="{{url_for('post_detail', post_id = post.id) }}">{{post.title}}</a></h2>
+    <p>{{post.content}}</p>
+</div>
+    
+    {% endfor %}
+    {% else %}
+    <h1>Nothing to show here...</h1>
+
+{% endif %}
+{% endblock content %}
